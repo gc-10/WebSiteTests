@@ -41,7 +41,7 @@ html, body{
 
 /* Logo dimensioni ridotte per display ridotti */
 #logo_ridotto{
-    height: 130px;
+    height: 10px;
     border-radius: 10px;
 }
 
