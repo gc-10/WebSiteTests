@@ -8,7 +8,7 @@ html, body{
 
 /* Barra fissa in alto dove sarà presente il logo dell'azienda */
 #barra-titolo{
-    height: 150px;
+    height: 130px;
     top: 0;
     background-color: #ffffff;
     box-shadow: 0 2px 5px rgba(0,0,0,0.3); 
@@ -16,8 +16,8 @@ html, body{
 
 /* Barra con i tasti di navigazione dentro il sito */
 #barra-navigazione{
-    top: 150px;
-    height: 50px;
+    top: 130px;
+    height: 40px;
     background-color: #8B0000;
 }
 
@@ -41,7 +41,7 @@ html, body{
 
 /* Logo dimensioni ridotte per display ridotti */
 #logo_ridotto{
-    height: 150px;
+    height: 130px;
     border-radius: 10px;
 }
 
@@ -82,7 +82,7 @@ html, body{
     position: absolute;
     padding: 10px;
     /* Contenuto posizionato subito dopo le sbarre fisse (250px) con larghezza (SX, DX) e altezza massime */
-    top: 200px;   
+    top: 170px;   
     bottom: 0;
     left: 0;
     right: 0;

@@ -8,7 +8,7 @@ function aggiornaImmagineBarra() {
     // Pulisce il contenuto precedente
     barra.innerHTML="";
     const immagine=document.createElement("img");
-    if(window.innerWidth<=870){ 
+    if(window.innerWidth<=885){ 
         immagine.id="logo_ridotto";
         immagine.src=base+"img/Immagine_ridotta.png";   // Da notare il percorso come cambia a proposito del prefisso dato
         const barraNavigazione=document.getElementById("barra-navigazione");
