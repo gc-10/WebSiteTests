@@ -1,0 +1,101 @@
+html, body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    /* Si blocca lo scroll globale e si va scrollare solo il contenuto interno in modo da non intaccare il logo */
+    overflow: hidden;   
+}
+
+/* Barra fissa in alto dove sarà presente il logo dell'azienda */
+#barra-titolo{
+    height: 200px;
+    top: 0;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3); 
+}
+
+/* Barra con i tasti di navigazione dentro il sito */
+#barra-navigazione{
+    top: 200px;
+    height: 50px;
+    background-color: #8B0000;
+}
+
+/* Attributi comuni tra le due barre fisse*/
+#barra-titolo, #barra-navigazione{
+    position: fixed;   /* Barre posizionate fisse */
+    width: 100%;   
+    z-index: 1000;   /* La barra in alto deve sempre rimanere fissa sopra gli altri contenuti */
+    /* Centrare i contenuti */
+    display: flex;            
+    justify-content: center;  
+    align-items: center;    
+}
+
+/* Logo dell'azienda grande */
+#logo{
+    height: 90px;
+    border-radius: 15px;
+    cursor: pointer;   /* Per far apparire un cursore quando si passa sopra l'immagine */
+}
+
+/* Logo dimensioni ridotte per display ridotti */
+#logo_ridotto{
+    height: 200px;
+    border-radius: 10px;
+}
+
+/* Stato iniziale del logo e del contenuto che cambiano appena si carica la pagina con un effetto di sfumatura */
+#logo, #logo_ridotto{
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+}
+
+/* Altro effetto per la sfumatura */
+#logo.visible, #logo_ridotto.visible{ opacity: 1; }
+
+/* Caratteristiche tasti della barra di navigazione sia i bottoni non selezionati sia il bottone selezioanto */
+#bottoneSelezione, #selezionato{
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: oblique;
+    margin: 60px;
+    color: whitesmoke;
+    background-color: #8B0000;
+    border:#8B0000;
+    border-radius: 20px;
+    border: none;
+    /* Sul passaggio del mouse sopra uno dei bottoni della barra di navigazione, si applica un effetto transitorio più soft */
+    transition: 
+    box-shadow 0.2s ease-in-out,   
+    transform 0.2s ease-in-out;
+}
+
+/* Effetto  di ingrandimento delle scritte al passaggio del mouse sopra uno dei bottoni della barra di navigazione */
+#bottoneSelezione:hover, #selezionato:hover{ transform: scale(1.10); }
+
+/* Effetto sul bottone selezionato nella barra */
+#selezionato{ box-shadow: 0 0 10px 2px rgba(216, 219, 52, 0.80);  }
+
+/* Spazio per evitare che il contenuto venga nascosto sotto la barra */
+#contenuto{
+    position: absolute;
+    padding: 10px;
+    /* Contenuto posizionato subito dopo le sbarre fisse (250px) con larghezza (SX, DX) e altezza massime */
+    top: 250px;   
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow-y: auto;   /* Scroll solo del contenuto interno */
+    scroll-margin-top: 250px;   /* Quando si scrolla alla sezione in questione, si evitano le due barre soprastanti */
+    /* Caratteristiche per avere un effetto di scorrimento dall'alto verso il basso */
+    opacity: 0;
+    transform: translateY(-30px); 
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* Caratteristiche che terminano l'effetto dello scorrimento */
+#contenuto.visible{
+    opacity: 1;
+    transform: translateY(0); 
+}
